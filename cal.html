@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calendar </title>
+  <style>
+    body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
+    line-height: 1.7;
+    }
+
+    /* Title with gradient and glow */
+    h1 {
+        text-align: center;
+        background: linear-gradient(90deg, #e63946, #ff6b6b);
+        color: white;
+        padding: 15px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
+
+    /* Flexbox for calendars */
+    #row1 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    /* Table card style */
+    table {
+        border-collapse: collapse;
+        background: rgba(255,255,255,0.9);
+        border-radius: 14px;
+        box-shadow: 0px 6px 14px rgba(0,0,0,0.25);
+        overflow: hidden;
+        width: 260px;  
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        backdrop-filter: blur(8px);
+    }
+
+    table:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0px 12px 24px rgba(0,0,0,0.35);
+    }
+
+    /* Table heading */
+    th {
+        padding: 12px;
+        background: linear-gradient(135deg, #edf2f4, #d9e4ec);
+        color: #333;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Days */
+    td {
+        text-align: center;
+        padding: 10px;
+        height: 40px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        color: #203a43;
+    }
+
+    td:nth-child(1) {
+        color: #e63946;
+        font-weight: bold;
+    }
+
+    /* Hover effect on days */
+    td:hover {
+        background: #f1f1f1;
+        transform: scale(1.05);
+    }
+
+    /* Highlight holidays */
+    #hall {
+        background: linear-gradient(135deg, #e63946, #ff6b6b);
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    #hall:hover {
+        background: linear-gradient(135deg, #ff6b6b, #e63946);
+    }
+
+    /* Links inside cells */
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    @media (max-width: 67vw) {
+      .month-buttons {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <h1>CALENDAR 2004 </h1>
+  <div id="column">
+  <div id="row1">
+    <table>
+      <tr>
+        <th id="hall" colspan="8">january</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8"><a href="holi.html#jan">January 1 – New Year’s Day</a></th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="hall"><a href="holi.html#jan">1</a></td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td id="hall">4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td id="hall">11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td id="hall">18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <td id="hall">25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">february</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">----NONE----</th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall">1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td id="hall">8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td id="hall">15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td id="hall">22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td id="hall">29</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">march</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">----NONE----</th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td id="hall">7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td id="hall">14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td id="hall">21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td id="hall">28</td>
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div id="row1">
+    <table>
+      <tr>
+        <th id="hall" colspan="7">april</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">
+          <a href="holi.html#apr">
+          April 7 – Araw ng Kagitingan 
+          </a>
+          <br>
+          <br>
+          <a href="holi.html#apr">
+          April 8 – Maundy Thursday
+          </a>
+          <br>
+          <br>
+          <a href="holi.html#apr">
+          April 9 – Good Friday
+          </a>
+        </th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td id="hall">4</td>
+        <td >5</td>
+        <td>6</td>
+        <td id="hall"><a href="holi.html#apr"> 7 </a></td>
+        <td id="hall"><a href="holi.html#apr"> 8 </a></td>
+        <td id="hall"><a href="holi.html#apr"> 9 </a></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td id="hall">11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td id="hall">18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <td id="hall">25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">may</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8"><a href="holi.html#may">May 1 – Labor Day </a></th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="hall"><a href="holi.html#may"> 1 </a></td>
+      </tr>
+      <tr>
+        <td id="hall">2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td id="hall">9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td id="hall">16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td id="hall">23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+      </tr>
+      <tr>
+        <td id="hall">30</td>
+        <td>31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">june</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8"><a href="holi.html#jun">June 14 – Independence Day </a></th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td id="hall"><a href="holi.html#jun"> 6 </a></td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td id="hall">13</td>
+        <td id="hall">14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td id="hall">20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+      </tr>
+      <tr>
+        <td id="hall">27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div id="row1">
+    <table>
+      <tr>
+        <th id="hall" colspan="7">july</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">----NONE----</th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td id="hall">4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td id="hall">11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td id="hall">18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <td id="hall">25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">august</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8"><a href="holi.html#aug"> August 30 – National Heroes Day </a></th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall">1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td id="hall">8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td id="hall">15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td id="hall">22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td id="hall">29</td>
+        <td id="hall"><a href="holi.html#aug"> 30 </a></td>
+        <td>31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">september</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">----NONE----</th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td id="hall">5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td id="hall">12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td id="hall">19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td id="hall">26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div id="row1">
+    <table>
+      <tr>
+        <th id="hall" colspan="7">october</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">----NONE----</th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td id="hall">3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td id="hall">10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td id="hall">17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td id="hall">24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td id="hall">31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">november</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">
+          <a href="holi.html#nov">
+          November 1 – All Saints’ Day
+          </a>
+          <br>
+          <br>
+          <a href="holi.html#nov">
+          November 29 – Bonifacio Day
+          </a>
+        </th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td id="hall"><a href="holi.html#nov"> 1 </a></td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td id="hall">7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td id="hall">14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td id="hall">21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td id="hall">28</td>
+        <td id="hall"><a href="holi.html#nov"> 29 </a></td>
+        <td>30</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <th id="hall" colspan="7">december</th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="jan"></th>
+        <th id="hall" rowspan="8">
+          <a href="holi.html#dec">
+          December 25 – Christmas Day
+          </a>
+          <br>
+          <br>
+          <a href="holi.html#dec">
+          December 30 – Rizal Day
+          </a>
+        </th>
+      </tr>
+      <tr>
+        <th id="hall">sun</th>
+        <th>mon</th>
+        <th>tue</th>
+        <th>wed</th>
+        <th>thu</th>
+        <th>fri</th>
+        <th>sat</th>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td id="hall">5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td id="hall">12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td id="hall">19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td id="hall"><a href="holi.html#dec"> 25 </a></td>
+      </tr>
+      <tr>
+        <td id="hall">26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td id="hall"><a href="holi.html#dec"> 30 </a></td>
+        <td>31</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="hall"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</body>
+</html>
